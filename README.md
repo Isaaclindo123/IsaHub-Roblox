@@ -21,5 +21,5 @@ Tem vários hacks, como
 Ela é totalmente gratuita e de código aberto e está disponível no discord, no github ou [nesse link](https://sirius.menu/rayfield)
 # Obrigado por usar!!!
 Eu agradeço por usar meu hub!
-Feito em Lua com a interface do RayField para Roblox (use em executores de confiança e saiba que usar script viota o Termos de Uso do robox então, use com sabedoria)
+Feito em Lua com a interface do RayField para Roblox (use em executores de confiança e saiba que usar script viola o Termos de Uso do robox então, use com sabedoria)
 
