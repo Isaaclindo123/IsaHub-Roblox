@@ -71,9 +71,8 @@ TabBrook:CreateToggle({
           Rayfield:Notify({Title = "Fling Ativado mn!!!", Content = "Incosta im alguém pa ve se eu num jogo no quintu dus infernu", Duration = 3})
           task.spawn(function()
               while FlingEnabled and char and hrp do
-                  -- A mágica do Fling interno: girar o RootPart loucamente
                   local oldVelocity = hrp.Velocity
-                  hrp.Velocity = Vector3.new(10000, 10000, 10000) -- Força extrema
+                  hrp.Velocity = Vector3.new(10000, 10000, 10000)
                   game:GetService("RunService").RenderStepped:Wait()
                   hrp.Velocity = oldVelocity
                   task.wait(0.1)
