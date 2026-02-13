@@ -13,9 +13,9 @@ local Window = Rayfield:CreateWindow({
 
 -- ABAS PRINCIPAIS
 local TabAdm = Window:CreateTab("Adm Scripts", 4483362458)
-local TabBrook = Window:CreateTab("Brookhaven", 4483362458)
-local TabLucky = Window:CreateTab("Lucky Block", 4483362458)
-local TabKnock = Window:CreateTab("Knockout", 4483362458)
+local TabBrook = Window:CreateTab("Brookhaven (pra trola us amiguito)", 4483362458)
+local TabLucky = Window:CreateTab("Break a Lucky Block meu jogo FAVORITO", 4483362458)
+local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
 
 ---------------------------------------------------------
 --- SEÇÃO: ADM SCRIPTS (para ser o ADM)
