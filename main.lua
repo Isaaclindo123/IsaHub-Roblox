@@ -18,7 +18,7 @@ local TabLucky = Window:CreateTab("Break a Lucky Block meu jogo FAVORITO", 44833
 local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
 
 ---------------------------------------------------------
---- SEÇÃO: ADM SCRIPTS (para ser o ADM)
+--- SEÇÃO: ADM SCRIPTS
 ---------------------------------------------------------
 TabAdm:CreateButton({
    Name = "Infinite Yield IY",
@@ -35,7 +35,7 @@ TabAdm:CreateButton({
 })
 
 ---------------------------------------------------------
---- SEÇÃO: BROOKHAVEN (para trollar amiguitos)
+--- SEÇÃO: BROOKHAVEN
 ---------------------------------------------------------
 local Clip = true
 game:GetService("RunService").Stepped:Connect(function()
@@ -58,16 +58,16 @@ TabBrook:CreateButton({
       loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
    end,
 })
-
 TabBrook:CreateButton({
    Name = "Fling (joga as pessoa pru quintu dus infernu)",
    Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/Mini-C4/Roblox-Fling-Script/main/Fling.lua"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Quantum-Scripts/Fling/main/Fling.lua"))()
    end,
 })
 
+
 ------------------------------------------------------------
---- SEÇÃO: BREAK A LUCKY BLOCK (um dos meu jogos FAVORITOS)
+--- SEÇÃO: BREAK A LUCKY BLOCK
 ------------------------------------------------------------
 TabLucky:CreateButton({
    Name = "Quebrar os lucky brocki próximo (Auto Break)",
@@ -101,7 +101,7 @@ TabLucky:CreateToggle({
 })
 
 ---------------------------------------------------------
---- SEÇÃO: KNOCKOUT (OP) (baterfora)
+--- SEÇÃO: KNOCKOUT (OP)
 ---------------------------------------------------------
 local ReachSize = 15
 local KAura = false
