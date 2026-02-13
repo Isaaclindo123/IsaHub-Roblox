@@ -60,7 +60,7 @@ TabBrook:CreateButton({
 })
 
 TabBrook:CreateButton({
-   Name = "fing (joga as pessoa pru quintu dus infernu)",
+   Name = "Fling (joga as pessoa pru quintu dus infernu)",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/DigitalityScripts/unpatched-fling/main/gui"))()
    end,
@@ -103,7 +103,7 @@ local ReachSize = 15
 local KAura = false
 
 TabKnock:CreateToggle({
-   Name = "Kill Aura (Para atacar us inimigu e enfia nu quintu dus infernu)",
+   Name = "Kill Aura (Para ataca automatico)",
    CurrentValue = false,
    Callback = function(Value)
       KAura = Value
@@ -133,3 +133,4 @@ TabKnock:CreateSlider({
 
 
 Rayfield:Notify({Title = "Carregado o IsaHub KEYLESS!!", Content = "Divirta-se (ou não...)", Duration = 5})
+
