@@ -11,14 +11,16 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
--- ABAS PRINCIPAIS
+---------------------------------------------------------
+--- ABAS DO MENU
+---------------------------------------------------------
 local TabAdm = Window:CreateTab("Adm Scripts", 4483362458)
 local TabBrook = Window:CreateTab("Brookhaven (pra trola us amiguito)", 4483362458)
-local TabLucky = Window:CreateTab("Lucky Block meu jogo FAVORITO", 4483362458)
+local TabLucky = Window:CreateTab("Break a Lucky Block meu jogo FAVORITO", 4483362458)
 local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
 
 ---------------------------------------------------------
---- SEÇÃO: ADM SCRIPTS
+--- SEÇÃO: ADM SCRIPTS (para ser o ADM)
 ---------------------------------------------------------
 TabAdm:CreateButton({
    Name = "Infinite Yield IY",
@@ -59,34 +61,32 @@ TabBrook:CreateButton({
    end,
 })
 
+-- Fling Interno para evitar Callback Error
 local FlingEnabled = false
 TabBrook:CreateToggle({
    Name = "Fling (joga as pessoa pru quintu dus infernu)",
    CurrentValue = false,
    Callback = function(Value)
       FlingEnabled = Value
-      local lp = game.Players.LocalPlayer
-      task.spawn(function()
-          while FlingEnabled do
-              task.wait(0.1)
-              local char = lp.Character
-              local hrp = char and char:FindFirstChild("HumanoidRootPart")
-              if hrp then
-                  hrp.Velocity = Vector3.new(0, 5000, 0) 
-                  task.wait(0.05)
-                  hrp.Velocity = Vector3.new(0, -5000, 0)
-              end
-          end
-      end)
       if FlingEnabled then
-          Rayfield:Notify({Title = "Fling Ativado", Content = "Encosta im alguém pra ve se eu num jogo nu quintu dus infernu", Duration = 3})
+          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém!", Duration = 2})
+          task.spawn(function()
+              while FlingEnabled do
+                  task.wait(0.1)
+                  local lp = game.Players.LocalPlayer
+                  local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+                  if hrp then
+                      hrp.Velocity = Vector3.new(0, 10000, 0)
+                  end
+              end
+          end)
       end
    end,
 })
 
-------------------------------------------------------------
+---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK (um dos meu jogos FAVORITOS)
-------------------------------------------------------------
+---------------------------------------------------------
 TabLucky:CreateButton({
    Name = "Quebrar os lucky brocki próximo (Auto Break)",
    Callback = function()
@@ -124,7 +124,7 @@ local ReachSize = 15
 local KAura = false
 
 TabKnock:CreateToggle({
-   Name = "Kill Aura (Enfia nu quintu dus infernu)",
+   Name = "Kill Aura (Para atacar us inimigu e enfia nu quintu dus infernu)",
    CurrentValue = false,
    Callback = function(Value)
       KAura = Value
@@ -147,9 +147,12 @@ TabKnock:CreateToggle({
 })
 
 TabKnock:CreateSlider({
-   Name = "Alcance do Reach",
+   Name = "Alcance do Reach (para taca us inimigu pu quintu dus infernu)",
    Min = 10, Max = 40, Default = 15,
    Callback = function(Value) ReachSize = Value end,
 })
 
-Rayfield:Notify({Title = "IsaHub Carregado!", Content = "O Ultra Hub está pronto!", Duration = 5})
+---------------------------------------------------------
+--- Script endzado
+---------------------------------------------------------
+Rayfield:Notify({Title = "IsaHub Carregado mn", Content = "Divirta-se ou não...", Duration = 5})
