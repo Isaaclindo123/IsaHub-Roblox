@@ -3,7 +3,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "IsaHub (The ultra hub)",
    LoadingTitle = "Carregando... duração 34 trilhões de anos",
-   LoadingSubtitle = "by IsaacLindo123 (github)",
+   LoadingSubtitle = "by IsaacLindo123 (Github)",
    ConfigurationSaving = {
       Enabled = true,
       FolderName = "IsafigConfig", 
@@ -130,5 +130,6 @@ TabKnock:CreateSlider({
    Min = 10, Max = 40, Default = 15,
    Callback = function(Value) ReachSize = Value end,
 })
+
 
 Rayfield:Notify({Title = "Carregado o IsaHub KEYLESS!!", Content = "Divirta-se (ou não...)", Duration = 5})
