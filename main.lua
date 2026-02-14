@@ -106,7 +106,7 @@ TabBrook:CreateToggle({
 })
 
 
-TabBrook:CreateSection("--- Status do Personagem ---")
+TabBrook:CreateSection("--- Status do Personagem de BO- ---")
 
 TabBrook:CreateSlider({
    Name = "Velocidade (Speed) (patu se o sônico)",
