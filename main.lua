@@ -35,97 +35,128 @@ TabAdm:CreateButton({
       loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
    end,
 })
-
 ---------------------------------------------------------
---- SEÇÃO: BROOKHAVEN (ZONA DE CAOS)
+--- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
 local Clip = true
 game:GetService("RunService").Stepped:Connect(function()
-    if not Clip and game.Players.LocalPlayer.Character then
-        for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-            if child:IsA("BasePart") then child.CanCollide = false end
-        end
-    end
+if not Clip and game.Players.LocalPlayer.Character then
+for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if child:IsA("BasePart") then child.CanCollide = false end
+end
+end
 end)
 
 TabBrook:CreateToggle({
-   Name = "Noclip (sem a cripage)",
-   CurrentValue = false,
-   Callback = function(Value) Clip = not Value end,
+Name = "Noclip (sem a cripage)",
+CurrentValue = false,
+Callback = function(Value) Clip = not Value end,
 })
 
 TabBrook:CreateButton({
-   Name = "Fly (Vua)",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
-   end,
+Name = "Fly (Vua)",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end,
 })
 
 TabBrook:CreateToggle({
-   Name = "Fling (joga as pessoa pru quintu dus infernu)",
-   CurrentValue = false,
-   Callback = function(Value)
-      _G.FlingEnabled = Value
-      if _G.FlingEnabled then
-          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém!", Duration = 2})
-          task.spawn(function()
-              while _G.FlingEnabled do
-                  task.wait(0.1)
-                  local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-                  if hrp then hrp.Velocity = Vector3.new(0, 10000, 0) end
-              end
-          end)
-      end
-   end,
+Name = "Fling (joga as pessoa pru quintu dus infernu)",
+CurrentValue = false,
+Callback = function(Value)
+_G.FlingEnabled = Value
+if _G.FlingEnabled then
+Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém!", Duration = 2})
+task.spawn(function()
+while _G.FlingEnabled do
+task.wait(0.1)
+local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+if hrp then hrp.Velocity = Vector3.new(0, 10000, 0) end
+end
+end)
+end
+end,
 })
+
 local TornadoActive = false
+local function ResetPhysics()
+local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+if hrp then
+hrp.RotVelocity = Vector3.new(0, 0, 0)
+hrp.Velocity = Vector3.new(0, 0, 0)
+end
+end
+
 TabBrook:CreateToggle({
-   Name = "🌪️ Ativa u furação (pa taca as pessoa pu djabu)",
-   CurrentValue = false,
-   Callback = function(Value)
-      TornadoActive = Value
-      if TornadoActive then
-          Rayfield:Notify({Title = "Tornado Ativado", Content = "Pés no chão, giro na cabeça!", Duration = 3})
-          task.spawn(function()
-              while TornadoActive do
-                  task.wait()
-                  local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-                  if hrp then
-                      -- Mantém você no chão mas gira muito rápido
-                      hrp.RotVelocity = Vector3.new(0, 20000, 0)
-                      hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z) 
-                  end
-              end
-          end)
-      else
-          ResetPhysics()
-      end
-   end,
+Name = "🌪️ Ativa u furação (pa taca as pessoa pu djabu)",
+CurrentValue = false,
+Callback = function(Value)
+TornadoActive = Value
+if TornadoActive then
+Rayfield:Notify({Title = "Tornado Ativado", Content = "Pés no chão, giro na cabeça!", Duration = 3})
+task.spawn(function()
+while TornadoActive do
+task.wait()
+local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+if hrp then
+-- Valores mais seguros para não te jogar pra fora
+hrp.RotVelocity = Vector3.new(0, 150, 0)
+-- Mantém você próximo ao chão
+if hrp.Position.Y > 10 then
+hrp.Velocity = Vector3.new(hrp.Velocity.X, -50, hrp.Velocity.Z)
+else
+hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
+end
+end
+end
+end)
+else
+ResetPhysics()
+end
+end,
 })
 
 TabBrook:CreateSection("--- Status do Personagem ---")
 
-TabBrook:CreateSlider({
-   Name = "Velocidade (Speed) (pa vira o sônico)",
-   Min = 16, Max = 300, Default = 16,
-   Callback = function(Value)
-      local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-      if hum then 
-          hum.WalkSpeed = Value 
-      end
-   end,
-})
+-- Sistema de loop constante para velocidade
+local SpeedValue = 16
+local SpeedLoop = nil
 
 TabBrook:CreateSlider({
-   Name = "Altura do Pulo (Jump) (pa pula pu carai)",
-   Min = 50, Max = 500, Default = 50,
-   Callback = function(Value)
-      local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-      if hum then 
-          hum.UseJumpPower = true
-          hum.JumpPower = Value 
-      end
-   end,
+Name = "Velocidade (Speed) (pa vira o sônico)",
+Min = 16, Max = 200, -- Reduzi o máximo para 200
+Default = 16,
+Callback = function(Value)
+SpeedValue = Value
+if SpeedLoop then SpeedLoop:Disconnect() end
+SpeedLoop = game:GetService("RunService").Heartbeat:Connect(function()
+local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+if hum then
+hum.WalkSpeed = SpeedValue
+end
+end)
+end,
+})
+
+-- Sistema corrigido para JumpHeight (Brookhaven usa isso)
+local JumpValue = 50
+local JumpLoop = nil
+
+TabBrook:CreateSlider({
+Name = "Altura do Pulo (Jump) (pa pula pu carai)",
+Min = 7.2, Max = 150, -- Valor padrão do Brookhaven é 7.2
+Default = 7.2,
+Callback = function(Value)
+JumpValue = Value
+if JumpLoop then JumpLoop:Disconnect() end
+JumpLoop = game:GetService("RunService").Heartbeat:Connect(function()
+local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+if hum then
+hum.UseJumpPower = false -- Brookhaven usa JumpHeight
+hum.JumpHeight = JumpValue
+end
+end)
+end,
 })
 ---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK
