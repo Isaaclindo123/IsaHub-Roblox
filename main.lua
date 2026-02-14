@@ -15,9 +15,9 @@ local Window = Rayfield:CreateWindow({
 --- ABAS DO MENU
 ---------------------------------------------------------
 local TabAdm = Window:CreateTab("Adm Scripts", 4483362458)
-local TabBrook = Window:CreateTab("Brookhaven (trola)", 4483362458)
-local TabLucky = Window:CreateTab("Lucky Block", 4483362458)
-local TabKnock = Window:CreateTab("Knockout (OP)", 4483362458)
+local TabBrook = Window:CreateTab("Brookhaven (pa trola us amiguito)", 4483362458)
+local TabLucky = Window:CreateTab("Break a Lucky Block (um dos meu jogos FAVORITOS)", 4483362458)
+local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
 
 ---------------------------------------------------------
 --- SEÇÃO: ADM SCRIPTS
@@ -67,7 +67,7 @@ TabBrook:CreateToggle({
    Callback = function(Value)
       _G.FlingEnabled = Value
       if _G.FlingEnabled then
-          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém pra ve se eu num taco nu quintu dus infernu", Duration = 2})
+          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém pa ve se eu num taco ela pu djabu", Duration = 2})
           task.spawn(function()
               while _G.FlingEnabled do
                   task.wait(0.1)
@@ -81,20 +81,19 @@ TabBrook:CreateToggle({
 
 local TornadoActive = false
 TabBrook:CreateToggle({
-   Name = "🌪️ Ativa u furação (pra leva as pessoa pu djabu)",
+   Name = "🌪️ Ativa u furação (pra joga as pessoa pu djabu)",
    CurrentValue = false,
    Callback = function(Value)
       TornadoActive = Value
       local lp = game.Players.LocalPlayer
       if TornadoActive then
-          Rayfield:Notify({Title = "Furação ativado", Content = "Gira igual um spinner!", Duration = 3})
+          Rayfield:Notify({Title = "Furação ativado", Content = "Encosta em alguémpa ve se eu num taco pru djabu", Duration = 3})
           task.spawn(function()
               while TornadoActive do
                   task.wait()
                   local char = lp.Character
                   local hrp = char and char:FindFirstChild("HumanoidRootPart")
-                  if hrp then
-                      hrp.RotVelocity = Vector3.new(0, 15000, 0)
+                  if hrp then                   hrp.RotVelocity = Vector3.new(0, 15000, 0)
                   end
               end
           end)
@@ -105,8 +104,9 @@ TabBrook:CreateToggle({
    end,
 })
 
+
 TabBrook:CreateSlider({
-   Name = "Velocidade (Speed) (pse se o sônico)",
+   Name = "Velocidade (Speed)",
    Min = 16, Max = 300, Default = 16,
    Callback = function(Value)
       local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
@@ -115,7 +115,7 @@ TabBrook:CreateSlider({
 })
 
 TabBrook:CreateSlider({
-   Name = "Altura do Pulo (Jump) (pse i pu djabu)",
+   Name = "Altura do Pulo (Jump)",
    Min = 50, Max = 500, Default = 50,
    Callback = function(Value)
       local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
