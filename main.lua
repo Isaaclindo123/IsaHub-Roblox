@@ -81,54 +81,53 @@ TabBrook:CreateToggle({
 
 local TornadoActive = false
 TabBrook:CreateToggle({
-   Name = "🌪️ Ativa u furação (pra leva as pessoa pu djabu)",
+   Name = "🌪️ Ativa u furação (pse manda as pessoa pu djadu)",
    CurrentValue = false,
    Callback = function(Value)
       TornadoActive = Value
+      local lp = game.Players.LocalPlayer
       if TornadoActive then
-          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Encoste neles!", Duration = 3})
+          Rayfield:Notify({Title = "Furação ativado", Content = "Gira ogual um spiner pa joga as pessoa pu djabu", Duration = 3})
           task.spawn(function()
               while TornadoActive do
                   task.wait()
-                  local char = game.Players.LocalPlayer.Character
+                  local char = lp.Character
                   local hrp = char and char:FindFirstChild("HumanoidRootPart")
-                  if hrp then
-                      hrp.Velocity = Vector3.new(1200, 0, 1200) 
-                      hrp.RotVelocity = Vector3.new(0, 10000, 0)
+                  if hrp.RotVelocity 
+                      hrp.RotVelocity = Vector3.new(0, 15000, 0)
                   end
               end
           end)
       else
-          local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-          if hrp then hrp.RotVelocity = Vector3.new(0,0,0) hrp.Velocity = Vector3.new(0,0,0) end
+          local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+          if hrp then hrp.RotVelocity = Vector3.new(0,0,0) end
       end
    end,
 })
 
-TabBrook:CreateSection("--- Status do seu personagem do DJABU POSSUIDO PELU DIMONIU---")
-
 TabBrook:CreateSlider({
-   Name = "Velocidade (Speed) (Para ser o sônico)",
+   Name = "Velocidade (Speed) (pse se o sônico)",
    Min = 16, Max = 300, Default = 16,
    Callback = function(Value)
-      if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-      end
+      local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+      if hum then hum.WalkSpeed = Value end
    end,
 })
 
 TabBrook:CreateSlider({
-   Name = "Altura do Pulo (Jump)(Pse i pu djabu)",
+   Name = "Altura do Pulo (Jump) (pse i pu djabu)",
    Min = 50, Max = 500, Default = 50,
    Callback = function(Value)
-      if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-         game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+      local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+      if hum then 
+          hum.JumpPower = Value 
+          hum.UseJumpPower = true
       end
    end,
 })
 
 ---------------------------------------------------------
---- SEÇÃO: BREAK A LUCKY BLOCK (Meu jogo FAVORITO)
+--- SEÇÃO: BREAK A LUCKY BLOCK
 ---------------------------------------------------------
 TabLucky:CreateButton({
    Name = "Auto Break (lucky brocki)",
@@ -200,4 +199,4 @@ TabKnock:CreateSlider({
 ---------------------------------------------------------
 --- Script endzado
 ---------------------------------------------------------
-Rayfield:Notify({Title = "IsaHub Carregado!", Content = "Tudo em um só lugar!", Duration = 5})
+Rayfield:Notify({Title = "IsaHub Carregado!", Content = "Divirta-se, ou não...", Duration = 5})
