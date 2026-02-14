@@ -67,7 +67,7 @@ TabBrook:CreateToggle({
    Callback = function(Value)
       _G.FlingEnabled = Value
       if _G.FlingEnabled then
-          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém!", Duration = 2})
+          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém pra ve se eu num taco nu quintu dus infernu", Duration = 2})
           task.spawn(function()
               while _G.FlingEnabled do
                   task.wait(0.1)
@@ -81,19 +81,19 @@ TabBrook:CreateToggle({
 
 local TornadoActive = false
 TabBrook:CreateToggle({
-   Name = "🌪️ Ativa u furação (pse manda as pessoa pu djadu)",
+   Name = "🌪️ Ativa u furação (pra leva as pessoa pu djabu)",
    CurrentValue = false,
    Callback = function(Value)
       TornadoActive = Value
       local lp = game.Players.LocalPlayer
       if TornadoActive then
-          Rayfield:Notify({Title = "Furação ativado", Content = "Gira ogual um spiner pa joga as pessoa pu djabu", Duration = 3})
+          Rayfield:Notify({Title = "Furação ativado", Content = "Gira igual um spinner!", Duration = 3})
           task.spawn(function()
               while TornadoActive do
                   task.wait()
                   local char = lp.Character
                   local hrp = char and char:FindFirstChild("HumanoidRootPart")
-                  if hrp.RotVelocity 
+                  if hrp then
                       hrp.RotVelocity = Vector3.new(0, 15000, 0)
                   end
               end
@@ -161,7 +161,7 @@ TabLucky:CreateToggle({
 })
 
 ---------------------------------------------------------
---- SEÇÃO: KNOCKOUT (OP) (baterfora)
+--- SEÇÃO: KNOCKOUT (OP)
 ---------------------------------------------------------
 local ReachSize = 15
 local KAura = false
