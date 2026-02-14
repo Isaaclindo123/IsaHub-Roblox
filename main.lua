@@ -20,7 +20,7 @@ local TabLucky = Window:CreateTab("Break a Lucky Block meu jogo FAVORITO", 44833
 local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
 
 ---------------------------------------------------------
---- SEÇÃO: ADM SCRIPTS (para ser o ADM)
+--- SEÇÃO: ADM SCRIPTS
 ---------------------------------------------------------
 TabAdm:CreateButton({
    Name = "Infinite Yield IY",
@@ -37,7 +37,7 @@ TabAdm:CreateButton({
 })
 
 ---------------------------------------------------------
---- SEÇÃO: BROOKHAVEN (para trollar amiguitos)
+--- SEÇÃO: BROOKHAVEN (ZONA DE CAOS)
 ---------------------------------------------------------
 local Clip = true
 game:GetService("RunService").Stepped:Connect(function()
@@ -61,58 +61,56 @@ TabBrook:CreateButton({
    end,
 })
 
--- Fling Interno para evitar Callback Error
-local FlingEnabled = false
 TabBrook:CreateToggle({
    Name = "Fling (joga as pessoa pru quintu dus infernu)",
    CurrentValue = false,
    Callback = function(Value)
-      FlingEnabled = Value
-      if FlingEnabled then
+      _G.FlingEnabled = Value
+      if _G.FlingEnabled then
           Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém!", Duration = 2})
           task.spawn(function()
-              while FlingEnabled do
+              while _G.FlingEnabled do
                   task.wait(0.1)
-                  local lp = game.Players.LocalPlayer
-                  local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
-                  if hrp then
-                      hrp.Velocity = Vector3.new(0, 10000, 0)
-                  end
+                  local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+                  if hrp then hrp.Velocity = Vector3.new(0, 10000, 0) end
               end
           end)
       end
    end,
 })
+
+
 local TornadoActive = false
 TabBrook:CreateToggle({
-   Name = "Ativa u furação (pra leva as pessoa pu djabu)",
+   Name = "🌪️ Ativa u furação (pra leva as pessoa pu djabu)",
    CurrentValue = false,
    Callback = function(Value)
       TornadoActive = Value
       if TornadoActive then
-          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Corra em direção às pessoas ou carros!", Duration = 3})
-          
+          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Corra em direção às pessoas ou carros pra leva pu djabu", Duration = 3})
           task.spawn(function()
-              local lp = game.Players.LocalPlayer
               while TornadoActive do
                   task.wait()
-                  local char = lp.Character
+                  local char = game.Players.LocalPlayer.Character
                   local hrp = char and char:FindFirstChild("HumanoidRootPart")
                   if hrp then
-                      hrp.Velocity = Vector3.new(0, 3000, 0) -- Levanta um pouco
-                      hrp.RotVelocity = Vector3.new(0, 5000, 0) -- Gira absurdamente rápido
+                      hrp.Velocity = Vector3.new(0, 2500, 0) -- Força pra cima
+                      hrp.RotVelocity = Vector3.new(0, 8000, 0) -- Giro furioso
                   end
               end
           end)
       else
-          local hrp = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-          if hrp then hrp.RotVelocity = Vector3.new(0,0,0) hrp.Velocity = Vector3.new(0,0,0) end
+          local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+          if hrp then 
+              hrp.RotVelocity = Vector3.new(0,0,0) 
+              hrp.Velocity = Vector3.new(0,0,0) 
+          end
       end
    end,
 })
 
 ---------------------------------------------------------
---- SEÇÃO: BREAK A LUCKY BLOCK (um dos meu jogos FAVORITOS)
+--- SEÇÃO: BREAK A LUCKY BLOCK
 ---------------------------------------------------------
 TabLucky:CreateButton({
    Name = "Quebrar os lucky brocki próximo (Auto Break)",
@@ -132,6 +130,7 @@ TabLucky:CreateToggle({
       _G.Loot = Value
       while _G.Loot do
           task.wait(0.5)
+          if not _G.Loot then break end
           for _, item in pairs(game.Workspace:GetChildren()) do
               if item:IsA("Tool") and item:FindFirstChild("Handle") then
                   local char = game.Players.LocalPlayer.Character
@@ -145,19 +144,20 @@ TabLucky:CreateToggle({
 })
 
 ---------------------------------------------------------
---- SEÇÃO: KNOCKOUT (OP) (baterfora)
+--- SEÇÃO: KNOCKOUT (OP)
 ---------------------------------------------------------
 local ReachSize = 15
 local KAura = false
 
 TabKnock:CreateToggle({
-   Name = "Kill Aura (Para atacar us inimigu e enfia nu quintu dus infernu)",
+   Name = "Kill Aura (quintu dus infernu)",
    CurrentValue = false,
    Callback = function(Value)
       KAura = Value
       task.spawn(function()
          while KAura do
             task.wait(0.2)
+            if not KAura then break end
             local p = game.Players.LocalPlayer
             for _, v in pairs(game.Players:GetPlayers()) do
                if v ~= p and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
@@ -174,7 +174,7 @@ TabKnock:CreateToggle({
 })
 
 TabKnock:CreateSlider({
-   Name = "Alcance do Reach (para taca us inimigu pu quintu dus infernu)",
+   Name = "Alcance do Reach",
    Min = 10, Max = 40, Default = 15,
    Callback = function(Value) ReachSize = Value end,
 })
