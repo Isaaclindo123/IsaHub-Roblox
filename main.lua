@@ -77,43 +77,38 @@ end)
 end
 end,
 })
-
+TabBrook:CreateButton({
+    Name = "Remover Cercutas/Portas de ME- (Tirar us limite du mapah)",
+    Callback = function()
+        for i,v in pairs(workspace:GetDescendants()) do
+            if v.Name == "Fence" or v.Name == "Gate" or v.Name == "Door" then
+                v:Destroy()
+            end
+        end
+    end,
+})
 local TornadoActive = false
-local function ResetPhysics()
-local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-if hrp then
-hrp.RotVelocity = Vector3.new(0, 0, 0)
-hrp.Velocity = Vector3.new(0, 0, 0)
-end
-end
-
 TabBrook:CreateToggle({
-Name = "🌪️ Ativa u furação (pa taca as pessoa pu djabu)",
-CurrentValue = false,
-Callback = function(Value)
-TornadoActive = Value
-if TornadoActive then
-Rayfield:Notify({Title = "Tornado Ativado", Content = "Pés no chão, giro na cabeça!", Duration = 3})
-task.spawn(function()
-while TornadoActive do
-task.wait()
-local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-if hrp then
--- Valores mais seguros para não te jogar pra fora
-hrp.RotVelocity = Vector3.new(0, 150, 0)
--- Mantém você próximo ao chão
-if hrp.Position.Y > 10 then
-hrp.Velocity = Vector3.new(hrp.Velocity.X, -50, hrp.Velocity.Z)
-else
-hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
-end
-end
-end
-end)
-else
-ResetPhysics()
-end
-end,
+    Name = "🌪️ Furacão (pa taca as pessoa pu djabu)",
+    CurrentValue = false,
+    Callback = function(Value)
+        TornadoActive = Value
+        if TornadoActive then
+            task.spawn(function()
+                while TornadoActive do
+                    task.wait()
+                    local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+                    if hrp then
+                        hrp.RotVelocity = Vector3.new(0, 300, 0)
+                        hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z) 
+                    end
+                end
+            end)
+        else
+            local hrp = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if hrp then hrp.RotVelocity = Vector3.new(0,0,0) end
+        end
+    end,
 })
 
 ---------------------------------------------------------
@@ -154,23 +149,31 @@ TabLucky:CreateToggle({
 ---------------------------------------------------------
 --- SEÇÃO: KNOCKOUT (OP)
 ---------------------------------------------------------
-local ReachSize = 15
 local KAura = false
+local ReachSize = 20
+
 TabKnock:CreateToggle({
-   Name = "Kill Aura (quintu dus infernu)",
+   Name = "Kill Aura (pa taca tudu us pinguim pu quintu dus infernu)",
    CurrentValue = false,
    Callback = function(Value)
       KAura = Value
       task.spawn(function()
          while KAura do
-            task.wait(0.2)
+            task.wait(0.1) -- Mais rápido para não dar tempo de reação
             local p = game.Players.LocalPlayer
             for _, v in pairs(game.Players:GetPlayers()) do
                if v ~= p and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
                   local dist = (p.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                   if dist <= ReachSize then
-                     local tool = p.Character:FindFirstChildOfClass("Tool")
-                     if tool then tool:Activate() end
+                     -- Tenta ativar a ferramenta
+                     local tool = p.Character:FindFirstChildOfClass("Tool") or p.Backpack:FindFirstChildOfClass("Tool")
+                     if tool then
+                        tool.Parent = p.Character -- Equipa sozinho
+                        tool:Activate()
+                        -- Tenta bater se o jogo for de clique
+                        local args = { [1] = v.Character.HumanoidRootPart }
+                        if tool:FindFirstChild("RemoteEvent") then tool.RemoteEvent:FireServer(unpack(args)) end
+                     end
                   end
                end
             end
