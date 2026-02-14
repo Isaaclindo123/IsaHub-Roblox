@@ -78,7 +78,6 @@ TabBrook:CreateToggle({
       end
    end,
 })
-
 local TornadoActive = false
 TabBrook:CreateToggle({
    Name = "🌪️ Ativa u furação (pa taca as pessoa pu djabu)",
@@ -86,39 +85,39 @@ TabBrook:CreateToggle({
    Callback = function(Value)
       TornadoActive = Value
       if TornadoActive then
-          Rayfield:Notify({Title = "FURACÃO carregadu", Content = "Encosta em uma pessoa pa ve se eu num taco pu djabu", Duration = 3})
+          Rayfield:Notify({Title = "Tornado Ativado", Content = "Pés no chão, giro na cabeça!", Duration = 3})
           task.spawn(function()
               while TornadoActive do
                   task.wait()
-                  local char = game.Players.LocalPlayer.Character
-                  local hrp = char and char:FindFirstChild("HumanoidRootPart")
+                  local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
                   if hrp then
-                      hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
-                      hrp.RotVelocity = Vector3.new(0, 15000, 0)
+                      -- Mantém você no chão mas gira muito rápido
+                      hrp.RotVelocity = Vector3.new(0, 20000, 0)
+                      hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z) 
                   end
               end
           end)
       else
-          local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-          if hrp then hrp.RotVelocity = Vector3.new(0,0,0) end
+          ResetPhysics()
       end
    end,
 })
 
-
-TabBrook:CreateSection("--- Status do Personagem de BO- ---")
+TabBrook:CreateSection("--- Status do Personagem ---")
 
 TabBrook:CreateSlider({
-   Name = "Velocidade (Speed) (patu se o sônico)",
+   Name = "Velocidade (Speed) (pa vira o sônico)",
    Min = 16, Max = 300, Default = 16,
    Callback = function(Value)
       local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-      if hum then hum.WalkSpeed = Value end
+      if hum then 
+          hum.WalkSpeed = Value 
+      end
    end,
 })
 
 TabBrook:CreateSlider({
-   Name = "Altura do Pulo (Jump) (pa tu i pu djabu)",
+   Name = "Altura do Pulo (Jump) (pa pula pu carai)",
    Min = 50, Max = 500, Default = 50,
    Callback = function(Value)
       local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
@@ -128,7 +127,6 @@ TabBrook:CreateSlider({
       end
    end,
 })
-
 ---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK
 ---------------------------------------------------------
@@ -142,6 +140,27 @@ TabLucky:CreateButton({
       end
    end,
 })
+
+TabLucky:CreateToggle({
+   Name = "Puxa us item du chão (Praticamente um spawn)",
+   CurrentValue = false,
+   Callback = function(Value)
+      _G.Loot = Value
+      while _G.Loot do
+          task.wait(0.5)
+          if not _G.Loot then break end
+          for _, item in pairs(game.Workspace:GetChildren()) do
+              if item:IsA("Tool") and item:FindFirstChild("Handle") then
+                  local char = game.Players.LocalPlayer.Character
+                  if char and char:FindFirstChild("HumanoidRootPart") then
+                      item.Handle.CFrame = char.HumanoidRootPart.CFrame
+                  end
+              end
+          end
+      end
+   end,
+})
+
 
 ---------------------------------------------------------
 --- SEÇÃO: KNOCKOUT (OP)
@@ -171,4 +190,10 @@ TabKnock:CreateToggle({
    end,
 })
 
-Rayfield:Notify({Title = "IsaHub Pronto!", Content = "Divirta-se,ou não...", Duration = 5})
+TabKnock:CreateSlider({
+   Name = "Alcance do Reach (para taca us inimigu pu quintu dus infernu)",
+   Min = 10, Max = 40, Default = 15,
+   Callback = function(Value) ReachSize = Value end,
+})
+
+Rayfield:Notify({Title = "IsaHub Carregado!", Content = "Divirta-se,ou não...", Duration = 5})
