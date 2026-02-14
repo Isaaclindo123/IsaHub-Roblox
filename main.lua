@@ -15,9 +15,9 @@ local Window = Rayfield:CreateWindow({
 --- ABAS DO MENU
 ---------------------------------------------------------
 local TabAdm = Window:CreateTab("Adm Scripts", 4483362458)
-local TabBrook = Window:CreateTab("Brookhaven (pra trola us amiguito)", 4483362458)
-local TabLucky = Window:CreateTab("Break a Lucky Block meu jogo FAVORITO", 4483362458)
-local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
+local TabBrook = Window:CreateTab("Brookhaven (trola)", 4483362458)
+local TabLucky = Window:CreateTab("Lucky Block", 4483362458)
+local TabKnock = Window:CreateTab("Knockout (OP)", 4483362458)
 
 ---------------------------------------------------------
 --- SEÇÃO: ADM SCRIPTS
@@ -86,33 +86,52 @@ TabBrook:CreateToggle({
    Callback = function(Value)
       TornadoActive = Value
       if TornadoActive then
-          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Encoste neles para mandar pro djabu!", Duration = 3})
+          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Encoste neles!", Duration = 3})
           task.spawn(function()
               while TornadoActive do
                   task.wait()
                   local char = game.Players.LocalPlayer.Character
                   local hrp = char and char:FindFirstChild("HumanoidRootPart")
                   if hrp then
-                      hrp.Velocity = Vector3.new(1000, 0, 1000) 
+                      hrp.Velocity = Vector3.new(1200, 0, 1200) 
                       hrp.RotVelocity = Vector3.new(0, 10000, 0)
                   end
               end
           end)
       else
           local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-          if hrp then 
-              hrp.RotVelocity = Vector3.new(0,0,0) 
-              hrp.Velocity = Vector3.new(0,0,0) 
-          end
+          if hrp then hrp.RotVelocity = Vector3.new(0,0,0) hrp.Velocity = Vector3.new(0,0,0) end
+      end
+   end,
+})
+
+TabBrook:CreateSection("--- Status do seu personagem do DJABU POSSUIDO PELU DIMONIU---")
+
+TabBrook:CreateSlider({
+   Name = "Velocidade (Speed) (Para ser o sônico)",
+   Min = 16, Max = 300, Default = 16,
+   Callback = function(Value)
+      if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+      end
+   end,
+})
+
+TabBrook:CreateSlider({
+   Name = "Altura do Pulo (Jump)(Pse i pu djabu)",
+   Min = 50, Max = 500, Default = 50,
+   Callback = function(Value)
+      if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+         game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
       end
    end,
 })
 
 ---------------------------------------------------------
---- SEÇÃO: BREAK A LUCKY BLOCK
+--- SEÇÃO: BREAK A LUCKY BLOCK (Meu jogo FAVORITO)
 ---------------------------------------------------------
 TabLucky:CreateButton({
-   Name = "Quebrar os lucky brocki próximo (Auto Break)",
+   Name = "Auto Break (lucky brocki)",
    Callback = function()
       for _, v in pairs(game.Workspace:GetChildren()) do
           if (v.Name:find("Block") or v:FindFirstChild("ClickDetector")) and v:FindFirstChild("ClickDetector") then
@@ -123,7 +142,7 @@ TabLucky:CreateButton({
 })
 
 TabLucky:CreateToggle({
-   Name = "Puxa us item du chão (Praticamente um spawn)",
+   Name = "Puxa us item du chão",
    CurrentValue = false,
    Callback = function(Value)
       _G.Loot = Value
@@ -143,7 +162,7 @@ TabLucky:CreateToggle({
 })
 
 ---------------------------------------------------------
---- SEÇÃO: KNOCKOUT (OP)
+--- SEÇÃO: KNOCKOUT (OP) (baterfora)
 ---------------------------------------------------------
 local ReachSize = 15
 local KAura = false
@@ -181,4 +200,4 @@ TabKnock:CreateSlider({
 ---------------------------------------------------------
 --- Script endzado
 ---------------------------------------------------------
-Rayfield:Notify({Title = "IsaHub Carregado mn", Content = "Divirta-se ou não...", Duration = 5})
+Rayfield:Notify({Title = "IsaHub Carregado!", Content = "Tudo em um só lugar!", Duration = 5})
