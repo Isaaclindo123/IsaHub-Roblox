@@ -79,7 +79,6 @@ TabBrook:CreateToggle({
    end,
 })
 
-
 local TornadoActive = false
 TabBrook:CreateToggle({
    Name = "🌪️ Ativa u furação (pra leva as pessoa pu djabu)",
@@ -87,15 +86,15 @@ TabBrook:CreateToggle({
    Callback = function(Value)
       TornadoActive = Value
       if TornadoActive then
-          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Corra em direção às pessoas ou carros pra leva pu djabu", Duration = 3})
+          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Encoste neles para mandar pro djabu!", Duration = 3})
           task.spawn(function()
               while TornadoActive do
                   task.wait()
                   local char = game.Players.LocalPlayer.Character
                   local hrp = char and char:FindFirstChild("HumanoidRootPart")
                   if hrp then
-                      hrp.Velocity = Vector3.new(0, 2500, 0) -- Força pra cima
-                      hrp.RotVelocity = Vector3.new(0, 8000, 0) -- Giro furioso
+                      hrp.Velocity = Vector3.new(1000, 0, 1000) 
+                      hrp.RotVelocity = Vector3.new(0, 10000, 0)
                   end
               end
           end)
