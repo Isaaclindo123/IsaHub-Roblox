@@ -83,6 +83,33 @@ TabBrook:CreateToggle({
       end
    end,
 })
+local TornadoActive = false
+TabBrook:CreateToggle({
+   Name = "Ativa u furação (pra leva as pessoa pu djabu)",
+   CurrentValue = false,
+   Callback = function(Value)
+      TornadoActive = Value
+      if TornadoActive then
+          Rayfield:Notify({Title = "FURACÃO ATIVADO!", Content = "Corra em direção às pessoas ou carros!", Duration = 3})
+          
+          task.spawn(function()
+              local lp = game.Players.LocalPlayer
+              while TornadoActive do
+                  task.wait()
+                  local char = lp.Character
+                  local hrp = char and char:FindFirstChild("HumanoidRootPart")
+                  if hrp then
+                      hrp.Velocity = Vector3.new(0, 3000, 0) -- Levanta um pouco
+                      hrp.RotVelocity = Vector3.new(0, 5000, 0) -- Gira absurdamente rápido
+                  end
+              end
+          end)
+      else
+          local hrp = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+          if hrp then hrp.RotVelocity = Vector3.new(0,0,0) hrp.Velocity = Vector3.new(0,0,0) end
+      end
+   end,
+})
 
 ---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK (um dos meu jogos FAVORITOS)
