@@ -2,7 +2,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "IsaHub (The ultra hub)",
-   LoadingTitle = "Carregando... duração 34 trilhões de anos",
+   LoadingTitle = "Carregando...duração 34 trilhões de anos",
    LoadingSubtitle = "by IsaacLindo123 (Github)",
    ConfigurationSaving = {
       Enabled = true,
@@ -15,9 +15,9 @@ local Window = Rayfield:CreateWindow({
 --- ABAS DO MENU
 ---------------------------------------------------------
 local TabAdm = Window:CreateTab("Adm Scripts", 4483362458)
-local TabBrook = Window:CreateTab("Brookhaven (pa trola us amiguito)", 4483362458)
-local TabLucky = Window:CreateTab("Break a Lucky Block (um dos meu jogos FAVORITOS)", 4483362458)
-local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
+local TabBrook = Window:CreateTab("Brookhaven (pa trollar os amiguitos)", 4483362458)
+local TabLucky = Window:CreateTab("Break a Lucky Block (o meu jogo FAVORITO)", 4483362458)
+local TabKnock = Window:CreateTab("Knockout (OP)", 4483362458)
 
 ---------------------------------------------------------
 --- SEÇÃO: ADM SCRIPTS
@@ -67,7 +67,7 @@ TabBrook:CreateToggle({
    Callback = function(Value)
       _G.FlingEnabled = Value
       if _G.FlingEnabled then
-          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém pa ve se eu num taco ela pu djabu", Duration = 2})
+          Rayfield:Notify({Title = "Fling Ativado", Content = "Encoste em alguém!", Duration = 2})
           task.spawn(function()
               while _G.FlingEnabled do
                   task.wait(0.1)
@@ -81,32 +81,35 @@ TabBrook:CreateToggle({
 
 local TornadoActive = false
 TabBrook:CreateToggle({
-   Name = "🌪️ Ativa u furação (pra joga as pessoa pu djabu)",
+   Name = "🌪️ Ativa u furação (pa taca as pessoa pu djabu)",
    CurrentValue = false,
    Callback = function(Value)
       TornadoActive = Value
-      local lp = game.Players.LocalPlayer
       if TornadoActive then
-          Rayfield:Notify({Title = "Furação ativado", Content = "Encosta em alguémpa ve se eu num taco pru djabu", Duration = 3})
+          Rayfield:Notify({Title = "FURACÃO carregadu", Content = "Encosta em uma pessoa pa ve se eu num taco pu djabu", Duration = 3})
           task.spawn(function()
               while TornadoActive do
                   task.wait()
-                  local char = lp.Character
+                  local char = game.Players.LocalPlayer.Character
                   local hrp = char and char:FindFirstChild("HumanoidRootPart")
-                  if hrp then                   hrp.RotVelocity = Vector3.new(0, 15000, 0)
+                  if hrp then
+                      hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
+                      hrp.RotVelocity = Vector3.new(0, 15000, 0)
                   end
               end
           end)
       else
-          local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+          local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
           if hrp then hrp.RotVelocity = Vector3.new(0,0,0) end
       end
    end,
 })
 
 
+TabBrook:CreateSection("--- Status do Personagem ---")
+
 TabBrook:CreateSlider({
-   Name = "Velocidade (Speed)",
+   Name = "Velocidade (Speed) (patu se o sônico)",
    Min = 16, Max = 300, Default = 16,
    Callback = function(Value)
       local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
@@ -115,13 +118,13 @@ TabBrook:CreateSlider({
 })
 
 TabBrook:CreateSlider({
-   Name = "Altura do Pulo (Jump)",
+   Name = "Altura do Pulo (Jump) (pa tu i pu djabu)",
    Min = 50, Max = 500, Default = 50,
    Callback = function(Value)
       local hum = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
       if hum then 
-          hum.JumpPower = Value 
           hum.UseJumpPower = true
+          hum.JumpPower = Value 
       end
    end,
 })
@@ -140,32 +143,11 @@ TabLucky:CreateButton({
    end,
 })
 
-TabLucky:CreateToggle({
-   Name = "Puxa us item du chão",
-   CurrentValue = false,
-   Callback = function(Value)
-      _G.Loot = Value
-      while _G.Loot do
-          task.wait(0.5)
-          if not _G.Loot then break end
-          for _, item in pairs(game.Workspace:GetChildren()) do
-              if item:IsA("Tool") and item:FindFirstChild("Handle") then
-                  local char = game.Players.LocalPlayer.Character
-                  if char and char:FindFirstChild("HumanoidRootPart") then
-                      item.Handle.CFrame = char.HumanoidRootPart.CFrame
-                  end
-              end
-          end
-      end
-   end,
-})
-
 ---------------------------------------------------------
 --- SEÇÃO: KNOCKOUT (OP)
 ---------------------------------------------------------
 local ReachSize = 15
 local KAura = false
-
 TabKnock:CreateToggle({
    Name = "Kill Aura (quintu dus infernu)",
    CurrentValue = false,
@@ -174,7 +156,6 @@ TabKnock:CreateToggle({
       task.spawn(function()
          while KAura do
             task.wait(0.2)
-            if not KAura then break end
             local p = game.Players.LocalPlayer
             for _, v in pairs(game.Players:GetPlayers()) do
                if v ~= p and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
@@ -190,13 +171,4 @@ TabKnock:CreateToggle({
    end,
 })
 
-TabKnock:CreateSlider({
-   Name = "Alcance do Reach",
-   Min = 10, Max = 40, Default = 15,
-   Callback = function(Value) ReachSize = Value end,
-})
-
----------------------------------------------------------
---- Script endzado
----------------------------------------------------------
-Rayfield:Notify({Title = "IsaHub Carregado!", Content = "Divirta-se, ou não...", Duration = 5})
+Rayfield:Notify({Title = "IsaHub Pronto!", Content = "Divirta-se,ou não...", Duration = 5})
