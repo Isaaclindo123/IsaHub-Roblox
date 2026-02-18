@@ -39,7 +39,7 @@ TabAdm:CreateButton({
 ---------------------------------------------------------
 --- SEÇÃO: ESPECIAL (coletânea de scripts)
 ---------------------------------------------------------
-TabSpecial:CreateSection("--- Script Proibido ---")
+TabSpecial:CreateSection("--- Scripts de Personagem [alguns podem não dar certo em alguns jogos] ---")
 
 TabSpecial:CreateButton({
    Name = "1x1x1x1 hacker script (FE)",
@@ -48,6 +48,7 @@ TabSpecial:CreateButton({
       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-1x1x1x1-112170"))()
    end,
 })
+
 ---------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
