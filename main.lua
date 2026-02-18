@@ -2,7 +2,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "IsaHub (The ultra hub)",
-   LoadingTitle = "Carregando...duração 34 trilhões de anos",
+   LoadingTitle = "Carregando... duração 34 trilhões de anos",
    LoadingSubtitle = "by IsaacLindo123 (Github)",
    ConfigurationSaving = {
       Enabled = true,
@@ -55,7 +55,21 @@ TabSpecial:CreateButton({
   loadstring(game:HttpGet("https://rawscripts.net/raw/Client-Replication-John-doe-up-by-gojohdkaisenkt-34198"))()    
   end,
 })
+TabSpecial:CreateButton({
+   Name = "Noli Script v1",
+   Callback = function()
+      Rayfield:Notify({Title = "Noli v1", Content = "Ninguém encosta no meu objeto, se não leva instakill", Duration = 3})
+      loadstring(game:HttpGet('https://pastebin.com/raw/5iCjBWeR'))()
+   end,
+})
 
+TabSpecial:CreateButton({
+   Name = "Noli Script v2",
+   Callback = function()
+      Rayfield:Notify({Title = "Noli v2", Content = "Eu tenho esse objeto estelar que eu reconheço como meu...", Duration = 3})
+      loadstring(game:HttpGet("https://pastebin.com/raw/xgWMQ72c"))()
+   end,
+})
 
 ---------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
