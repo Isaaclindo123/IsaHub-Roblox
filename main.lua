@@ -42,10 +42,13 @@ TabAdm:CreateButton({
 TabSpecial:CreateSection("--- Base dos personagens (se não dar certo em alguns jogos) ---")
 
 TabSpecial:CreateButton({
-   Name = "Reanimate (Use antes do Noli/John Doe)",
+   Name = "Reanimate (Se os scripts do noli ou do john doe não der certo)",
    Callback = function()
-      Rayfield:Notify({Title = "Ranimando", Content = "Para os scripts supremos, AVANTE!!!", Duration = 5})
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Reanimate.lua"))()
+      Rayfield:Notify({Title = "Reanimando", Content = "Para tirar erros...", Duration = 4})
+      pcall(function()
+          local settings = {Frequency = 6, Amplification = 6, FrontOffset = 2.5}
+          loadstring(game:HttpGet("https://raw.githubusercontent.com/Mizunobyt/Reanimate/main/Reanimate.lua"))()
+      end)
    end,
 })
 
