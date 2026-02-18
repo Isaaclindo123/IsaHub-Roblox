@@ -15,7 +15,7 @@ local Window = Rayfield:CreateWindow({
 --- ABAS DO MENU
 ---------------------------------------------------------
 local TabAdm = Window:CreateTab("Adm Scripts", 4483362458)
-local TabSpecial = Window:CreateTab("SCRIPTS ESPECIAIS", 4483362458)
+local TabSpecial = Window:CreateTab("ESPECIAL", 4483362458)
 local TabBrook = Window:CreateTab("Brookhaven (pa trollar os amiguitos)", 4483362458)
 local TabLucky = Window:CreateTab("Break a Lucky Block (o meu jogo FAVORITO)", 4483362458)
 local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
