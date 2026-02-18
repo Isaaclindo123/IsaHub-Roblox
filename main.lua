@@ -39,6 +39,16 @@ TabAdm:CreateButton({
 ---------------------------------------------------------
 --- SEÇÃO: ESPECIAL (coletânea de scripts)
 ---------------------------------------------------------
+TabSpecial:CreateSection("--- Base dos personagens (se não dar certo em alguns jogos) ---")
+
+TabSpecial:CreateButton({
+   Name = "Reanimate (Use antes do Noli/John Doe)",
+   Callback = function()
+      Rayfield:Notify({Title = "Ranimando", Content = "Para os scripts supremos, AVANTE!!!", Duration = 5})
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Reanimate.lua"))()
+   end,
+})
+
 TabSpecial:CreateSection("--- Scripts de Personagem [alguns podem não dar certo em alguns jogos] ---")
 
 TabSpecial:CreateButton({
