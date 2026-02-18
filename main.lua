@@ -52,7 +52,7 @@ TabSpecial:CreateButton({
    Name = "John Doe Script (FE)",
    Callback = function()
       Rayfield:Notify({Title = "Executando John Doe", Content = "NÃO JOGUE ROBLOX NO DIA 16 (ou 18) DE MARÇO!?", Duration = 3})
-  loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fe-JOHN-DOE-FORSAKEN-110579"))()    
+  loadstring(game:HttpGet("https://rawscripts.net/raw/Client-Replication-John-doe-up-by-gojohdkaisenkt-34198"))()    
   end,
 })
 
