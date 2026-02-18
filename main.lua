@@ -33,7 +33,7 @@ TabAdm:CreateButton({
 TabAdm:CreateButton({
    Name = "Nameless Admin NA",
    Callback = function()
-      loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+      loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-1x1x1x1-112170"))()
    end,
 })
 ---------------------------------------------------------
