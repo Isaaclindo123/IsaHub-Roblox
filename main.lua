@@ -42,7 +42,7 @@ TabAdm:CreateButton({
 TabSpecial:CreateSection("--- Script Proibido ---")
 
 TabSpecial:CreateButton({
-   Name = "1x1x1x1 script (FE)",
+   Name = "1x1x1x1 hacker script (FE)",
    Callback = function()
       Rayfield:Notify({Title = "1x1x1 começando", Content = "O caos irá acontecer", Duration = 3})
       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-1x1x1x1-112170"))()
