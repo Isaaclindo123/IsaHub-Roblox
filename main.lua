@@ -15,9 +15,10 @@ local Window = Rayfield:CreateWindow({
 --- ABAS DO MENU
 ---------------------------------------------------------
 local TabAdm = Window:CreateTab("Adm Scripts", 4483362458)
+local TabSpecial = Window:CreateTab("SCRIPTS ESPECIAIS", 4483362458)
 local TabBrook = Window:CreateTab("Brookhaven (pa trollar os amiguitos)", 4483362458)
 local TabLucky = Window:CreateTab("Break a Lucky Block (o meu jogo FAVORITO)", 4483362458)
-local TabKnock = Window:CreateTab("Knockout (OP)", 4483362458)
+local TabKnock = Window:CreateTab("Knockout (OP) (baterfora)", 4483362458)
 
 ---------------------------------------------------------
 --- SEÇÃO: ADM SCRIPTS
@@ -33,6 +34,18 @@ TabAdm:CreateButton({
    Name = "Nameless Admin NA",
    Callback = function()
       loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+   end,
+})
+---------------------------------------------------------
+--- SEÇÃO: ESPECIAL (coletânea de scripts)
+---------------------------------------------------------
+TabSpecial:CreateSection("--- Script Proibido ---")
+
+TabSpecial:CreateButton({
+   Name = "1x1x1x1 script (FE)",
+   Callback = function()
+      Rayfield:Notify({Title = "1x1x1 começando", Content = "O caos irá acontecer", Duration = 3})
+      loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-1x1x1x1-112170"))()
    end,
 })
 ---------------------------------------------------------
