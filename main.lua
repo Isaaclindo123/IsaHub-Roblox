@@ -175,6 +175,14 @@ TabBrook:CreateToggle({
         end
     end,
 })
+TabBrook:CreateButton({
+   Name = "Rejoin (Entrar no mesmo server)",
+   Callback = function()
+      local ts = game:GetService("TeleportService")
+      local p = game.Players.LocalPlayer
+      ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
+   end,
+})
 
 ---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK
