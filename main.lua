@@ -62,14 +62,14 @@ TabSpecial:CreateButton({
    end,
 })
 TabSpecial:CreateButton({
-   Name = "John Doe Script (FE)",
+   Name = "John Doe Script (Mt legal)",
    Callback = function()
       Rayfield:Notify({Title = "Executando John Doe", Content = "NÃO JOGUE ROBLOX NO DIA 16 (ou 18) DE MARÇO!?", Duration = 3})
   loadstring(game:HttpGet("https://rawscripts.net/raw/Client-Replication-John-doe-up-by-gojohdkaisenkt-34198"))()    
   end,
 })
 TabSpecial:CreateButton({
-   Name = "Noli Script v1",
+   Name = "Noli Script v1 (apenas o speed)",
    Callback = function()
       Rayfield:Notify({Title = "Noli v1", Content = "Ninguém encosta no meu objeto, se não leva instakill", Duration = 3})
       loadstring(game:HttpGet('https://pastebin.com/raw/5iCjBWeR'))()
@@ -77,10 +77,39 @@ TabSpecial:CreateButton({
 })
 
 TabSpecial:CreateButton({
-   Name = "Noli Script v2",
+   Name = "Noli Script v2 (apenas o speed)",
    Callback = function()
       Rayfield:Notify({Title = "Noli v2", Content = "Eu tenho esse objeto estelar que eu reconheço como meu...", Duration = 3})
       loadstring(game:HttpGet("https://pastebin.com/raw/xgWMQ72c"))()
+   end,
+})
+
+TabSpecial:CreateSection("--- Inventário  ---")
+
+TabSpecial:CreateButton({
+   Name = "Mola de velocidade (Speed Coil)",
+   Callback = function()
+      local Tool = Instance.new("Tool")
+      Tool.Name = "Mola de Velocidade (Dada por IsaHub)"
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMage700/SystemExotic/main/SpeedCoil.lua"))()
+      Rayfield:Notify({Title = "Mola adicionada ao inventário", Content = "Divirta-se com a mola...", Duration = 3})
+   end,
+})
+
+TabSpecial:CreateButton({
+   Name = "Mola de Gravidade (Gravity Coil)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMage700/SystemExotic/main/GravityCoil.lua"))()
+      Rayfield:Notify({Title = "Mola 2 adicionada ao inventário", Content = "Divirta-se com a mola...", Duration = 3})
+   end,
+})
+
+
+TabSpecial:CreateButton({
+   Name = "F3X Building Tools",
+   Callback = function()
+      Rayfield:Notify({Title = "F3X Btools", Content = "Carregando ferramenta de construção", Duration = 3})
+      loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
    end,
 })
 
