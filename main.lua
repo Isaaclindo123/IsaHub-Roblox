@@ -87,25 +87,6 @@ TabSpecial:CreateButton({
 TabSpecial:CreateSection("--- Inventário  ---")
 
 TabSpecial:CreateButton({
-   Name = "Mola de velocidade (Speed Coil)",
-   Callback = function()
-      local Tool = Instance.new("Tool")
-      Tool.Name = "Mola de Velocidade (Dada por IsaHub)"
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMage700/SystemExotic/main/SpeedCoil.lua"))()
-      Rayfield:Notify({Title = "Mola adicionada ao inventário", Content = "Divirta-se com a mola...", Duration = 3})
-   end,
-})
-
-TabSpecial:CreateButton({
-   Name = "Mola de Gravidade (Gravity Coil)",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMage700/SystemExotic/main/GravityCoil.lua"))()
-      Rayfield:Notify({Title = "Mola 2 adicionada ao inventário", Content = "Divirta-se com a mola...", Duration = 3})
-   end,
-})
-
-
-TabSpecial:CreateButton({
    Name = "F3X Building Tools",
    Callback = function()
       Rayfield:Notify({Title = "F3X Btools", Content = "Carregando ferramenta de construção", Duration = 3})
