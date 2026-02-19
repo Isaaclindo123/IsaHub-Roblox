@@ -93,7 +93,13 @@ TabSpecial:CreateButton({
       loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
    end,
 })
-
+TabSpecial:CreateButton({
+   Name = "Item Giver (NO FE - Bom para fotos)",
+   Callback = function()
+      Rayfield:Notify({Title = "Item Giver", Content = "Carregando lista de itens...", Duration = 3})
+      loadstring(game:HttpGet("https://pastefy.app/qpbQo0lr/raw"))()
+   end,
+})
 ---------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
