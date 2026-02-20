@@ -102,14 +102,6 @@ TabSpecial:CreateButton({
    end,
 })
 
-TabSpecial:CreateButton({
-   Name = "Grab Knife",
-   Callback = function()
-      Rayfield:Notify({Title = "Grab Knife", Content = "SRGIN HAHAHAHAHA", Duration = 3})
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/refs/heads/master/Grab%20Knife%20V4.lua"))()
-   end,
-})
-
 ---------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
