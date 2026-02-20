@@ -83,6 +83,16 @@ TabSpecial:CreateButton({
       loadstring(game:HttpGet("https://pastebin.com/raw/xgWMQ72c"))()
    end,
 })
+TabSpecial:CreateSection("--- Guis de hackers ---")
+
+TabSpecial:CreateButton({
+   Name = "c00lgui ",
+   Callback = function()
+      Rayfield:Notify({Title = "c00lgui", Content = "SHIJIN HAHAHAHAHAHAH", Duration = 5})
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+   end,
+})
+
 
 TabSpecial:CreateSection("--- Inventário  ---")
 
