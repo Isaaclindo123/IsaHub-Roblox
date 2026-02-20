@@ -195,8 +195,8 @@ TabBrook:CreateButton({
    end,
 })
 
-TabSpecial:CreateButton({
-   Name = "No gravoty (sem gravidade)",
+TabBrook:CreateButton({
+   Name = "No gravity (sem gravidade)",
    Callback = function()
       Rayfield:Notify({Title = "No Gravity", Content = "Vamo subi", Duration = 3})
       loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/zerogravity"))()
