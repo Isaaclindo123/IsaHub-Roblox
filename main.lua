@@ -65,7 +65,7 @@ TabSpecial:CreateButton({
    Name = "John Doe Script (Mt legal)",
    Callback = function()
       Rayfield:Notify({Title = "Executando John Doe", Content = "NÃO JOGUE ROBLOX NO DIA 16 (ou 18) DE MARÇO!?", Duration = 3})
-  loadstring(game:HttpGet("https://rawscripts.net/raw/Client-Replication-John-doe-up-by-gojohdkaisenkt-34198"))()    
+  loadstring(game:HttpGet ("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/refs/heads/master/John%20Doe.lua"))()    
   end,
 })
 TabSpecial:CreateButton({
@@ -83,16 +83,6 @@ TabSpecial:CreateButton({
       loadstring(game:HttpGet("https://pastebin.com/raw/xgWMQ72c"))()
    end,
 })
-TabSpecial:CreateSection("--- Guis de hackers ---")
-
-TabSpecial:CreateButton({
-   Name = "c00lgui ",
-   Callback = function()
-      Rayfield:Notify({Title = "c00lgui", Content = "SHIJIN HAHAHAHAHAHAH", Duration = 5})
-      loadstring(game:HttpGet('https://raw.githubusercontent.com/IsaacLindo123/IsaHub-Roblox/main/c00lgui.lua'))()
-   end,
-})
-
 
 TabSpecial:CreateSection("--- Inventário  ---")
 
@@ -103,6 +93,7 @@ TabSpecial:CreateButton({
       loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
    end,
 })
+
 TabSpecial:CreateButton({
    Name = "Item Giver (NO FE - Bom para fotos)",
    Callback = function()
@@ -110,6 +101,15 @@ TabSpecial:CreateButton({
       loadstring(game:HttpGet("https://pastefy.app/qpbQo0lr/raw"))()
    end,
 })
+
+TabSpecial:CreateButton({
+   Name = "Grab Knife",
+   Callback = function()
+      Rayfield:Notify({Title = "Grab Knife", Content = "SRGIN HAHAHAHAHA", Duration = 3})
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/refs/heads/master/Grab%20Knife%20V4.lua"))()
+   end,
+})
+
 ---------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
@@ -185,12 +185,21 @@ TabBrook:CreateToggle({
         end
     end,
 })
+
 TabBrook:CreateButton({
    Name = "Rejoin (Entrar no mesmo server)",
    Callback = function()
       local ts = game:GetService("TeleportService")
       local p = game.Players.LocalPlayer
       ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
+   end,
+})
+
+TabSpecial:CreateButton({
+   Name = "No gravoty (sem gravidade)",
+   Callback = function()
+      Rayfield:Notify({Title = "No Gravity", Content = "Vamo subi", Duration = 3})
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/zerogravity"))()
    end,
 })
 
