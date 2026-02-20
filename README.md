@@ -12,7 +12,6 @@ Tem vários hacks, como
   - Script do Noli v2 (apenas o speed)
   - Script para F3X (no FE)
   - Script Item Giver (catálogo de itens)
-  - Script Grab Knife
 - Seção dos Scripts de Brookhaven (para trolar amiguitos)
    - Noclip (sem a cripage)
    - Fly (Vua) [Obs: É uma gui de voo]
