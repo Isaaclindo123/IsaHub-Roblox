@@ -5,10 +5,22 @@ Tem vários hacks, como
 - Seção dos Scripts admin (para ser o ADM)
   - Infinite Yield  IY (Um script para comandos como ;noclip ou ;f3x sempre com (;), v4.6)
   - Nameless Admin  NA (Um script com uma interface até lega, com várias coisas, mas eu não sei como usa direito, só a parte dos comandos)
+- Seção ESPECIAL
+  - Script do 1x1x1 FE
+  - Script do John Doe (agora com um novo script
+  - Script do Noli v1 (apenas o speed)
+  - Script do Noli v2 (apenas o speed)
+  - Script para F3X (no FE)
+  - Script Item Giver (catálogo de itens)
+  - Script Grab Knife
 - Seção dos Scripts de Brookhaven (para trolar amiguitos)
    - Noclip (sem a cripage)
    - Fly (Vua) [Obs: É uma gui de voo]
    - Fling (joga as pessoa pu alto) [Obs: é uma gui de fling (arremesso)]
+   - Torar cercutas/portas de ME- (Remove a porta da sua casa e dexa as outras tipo noclip)
+   - Furacão (vc sai girando)
+   - Rejoin
+   - No Gravity (isso é divertido)
  - Seção dos Scripts do Break a Lucky Block
     - Quebra us lucky broqui próximo (Auto Break)
     - Puxa us item do chão (É praticamente um spawn) [Obs: Ele pega as lucky block do chão]
