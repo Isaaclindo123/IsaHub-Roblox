@@ -89,7 +89,7 @@ TabSpecial:CreateButton({
    Name = "c00lgui ",
    Callback = function()
       Rayfield:Notify({Title = "c00lgui", Content = "SHIJIN HAHAHAHAHAHAH", Duration = 5})
-      loadstring(game:HttpGet('https://raw.githubusercontent.com/IsaacLindo123/IsaHub/main/c00lgui.lua'))()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/IsaacLindo123/IsaHub-Roblox/main/c00lgui.lua'))()
    end,
 })
 
