@@ -115,6 +115,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/ma
     track = "https://open.spotify.com/playlist/4FRup3EaL7T1tJLKChqkeB?si=FU5A3g_zSqS8df-S7B2pJQ&pi=IoQm6DqgRe-X-";
    end,
 })
+
+TabSpecial:CreateSection("--- Player de Música ---")
+
+TabSpecial:CreateButton({
+   Name = "Spotify Player",
+   Callback = function()
+      Rayfield:Notify({Title = "Spotify", Content = "Carregando sua playlist...", Duration = 3})
+      -- Corrigi a estrutura do script para ele não travar o Hub
+      local spotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/Spotify%20Player/Loader.lua"))()
+      spotify:load({
+          scale = 1,
+          volume = 0.6,
+          track = "https://open.spotify.com/playlist/4FRup3EaL7T1tJLKChqkeB?si=FU5A3g_zSqS8df-S7B2pJQ&pi=IoQm6DqgRe-X-" -- Seu link aqui
+      })
+   end,
+})
+
 -------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
