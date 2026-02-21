@@ -108,7 +108,11 @@ TabSpecial:CreateButton({
    Name = "Audio Player",
    Callback = function()
       Rayfield:Notify({Title = "Audio Player", Content = "Carregando reprodutor...", Duration = 3})
-      loadstring(game:HttpGet('https://raw.githubusercontent.com/Emerson2-creator/Scripts-Roblox/refs/heads/main/audioPlayer.lua'))()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/Spotify%20Player/Loader.lua"))():load({
+    scale = 1;
+    volume = 0.6;
+    track = "https://open.spotify.com/playlist/4FRup3EaL7T1tJLKChqkeB?si=FU5A3g_zSqS8df-S7B2pJQ&pi=IoQm6DqgRe-X-";
    end,
 })
 -------------------------------------------------------
