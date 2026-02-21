@@ -62,12 +62,12 @@ TabSpecial:CreateButton({
    end,
 })
 TabSpecial:CreateButton({
-   Name = "John Doe Script (Mt legal)",
+   Name = "John Doe Script (mt legal",
    Callback = function()
-      Rayfield:Notify({Title = "Executando John Doe", Content = "NÃO JOGUE ROBLOX NO DIA 16 (ou 18) DE MARÇO!?", Duration = 3})
-  loadstring(game:HttpGet ("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/refs/heads/master/John%20Doe.lua"))()    
-  end,
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/refs/heads/master/John%20Doe.lua"))()    
+   end,
 })
+
 TabSpecial:CreateButton({
    Name = "Noli Script v1 (apenas o speed)",
    Callback = function()
@@ -105,29 +105,14 @@ TabSpecial:CreateButton({
 TabSpecial:CreateSection("--- Outros ---")
 
 TabSpecial:CreateButton({
-   Name = "Audio Player",
-   Callback = function()
-      Rayfield:Notify({Title = "Audio Player", Content = "Carregando reprodutor...", Duration = 3})
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/Spotify%20Player/Loader.lua"))():load({
-    scale = 1;
-    volume = 0.6;
-    track = "https://open.spotify.com/playlist/4FRup3EaL7T1tJLKChqkeB?si=FU5A3g_zSqS8df-S7B2pJQ&pi=IoQm6DqgRe-X-";
-   end,
-})
-
-TabSpecial:CreateSection("--- Player de Música ---")
-
-TabSpecial:CreateButton({
    Name = "Spotify Player",
    Callback = function()
       Rayfield:Notify({Title = "Spotify", Content = "Carregando sua playlist...", Duration = 3})
-      -- Corrigi a estrutura do script para ele não travar o Hub
       local spotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/Spotify%20Player/Loader.lua"))()
       spotify:load({
           scale = 1,
           volume = 0.6,
-          track = "https://open.spotify.com/playlist/4FRup3EaL7T1tJLKChqkeB?si=FU5A3g_zSqS8df-S7B2pJQ&pi=IoQm6DqgRe-X-" -- Seu link aqui
+          track = "https://open.spotify.com/playlist/4FRup3EaL7T1tJLKChqkeB?si=FU5A3g_zSqS8df-S7B2pJQ&pi=IoQm6DqgRe-X-"
       })
    end,
 })
@@ -137,12 +122,13 @@ TabSpecial:CreateButton({
 ---------------------------------------------------------
 local Clip = true
 game:GetService("RunService").Stepped:Connect(function()
-if not Clip and game.Players.LocalPlayer.Character then
-for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-if child:IsA("BasePart") then child.CanCollide = false end
-end
-end
+    if not Clip and game.Players.LocalPlayer.Character then
+        for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if child:IsA("BasePart") then child.CanCollide = false end
+        end
+    end
 end)
+
 
 TabBrook:CreateToggle({
 Name = "Noclip (sem a cripage)",
