@@ -106,18 +106,12 @@ TabSpecial:CreateButton({
 TabSpecial:CreateSection("--- Outros ---")
 
 TabSpecial:CreateButton({
-   Name = "Spotify Player",
+   Name = "Player",
    Callback = function()
-      Rayfield:Notify({Title = "Spotify", Content = "Carregando sua playlist...", Duration = 3})
-      local spotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/Spotify%20Player/Loader.lua"))()
-      spotify:load({
-          scale = 1,
-          volume = 0.6,
-          track = "https://open.spotify.com/playlist/4FRup3EaL7T1tJLKChqkeB?si=FU5A3g_zSqS8df-S7B2pJQ&pi=IoQm6DqgRe-X-"
-      })
-   end,
-})
-
+      Rayfield:Notify({Title = "Player", Content = "Carregando...", Duration = 3})
+    loadstring(gameHttpGet("https://raw.githubusercontent.com/IsaacLindo123/IsaHub-Roblox/main/player.lua"))()
+      end,
+   })
 -------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
