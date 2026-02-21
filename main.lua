@@ -102,15 +102,15 @@ TabSpecial:CreateButton({
    end,
 })
 
+TabSpecial:CreateSection("--- Outros ---")
+
 TabSpecial:CreateButton({
    Name = "Audio Player",
    Callback = function()
-      Rayfield:Notify({Title = "Audio Player", Content = "Carregando áudios", Duration = 3})
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Emerson2-creator/Scripts-Roblox/refs/heads/main/audioPlayer.lua"))()
+      Rayfield:Notify({Title = "Audio Player", Content = "Carregando reprodutor...", Duration = 3})
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/Emerson2-creator/Scripts-Roblox/refs/heads/main/audioPlayer.lua'))()
    end,
 })
-
 -------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
