@@ -61,8 +61,9 @@ TabSpecial:CreateButton({
       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-1x1x1x1-112170"))()
    end,
 })
+
 TabSpecial:CreateButton({
-   Name = "John Doe Script (mt legal",
+   Name = "John Doe Script (mt legal)",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/refs/heads/master/John%20Doe.lua"))()    
    end,
