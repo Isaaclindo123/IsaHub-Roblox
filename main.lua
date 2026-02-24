@@ -106,12 +106,21 @@ TabSpecial:CreateButton({
 TabSpecial:CreateSection("--- Outros ---")
 
 TabSpecial:CreateButton({
-   Name = "Player",
+   Name = "Player YouTube Music",
    Callback = function()
-      Rayfield:Notify({Title = "Player", Content = "Carregando...", Duration = 3})
-    loadstring(gameHttpGet("https://raw.githubusercontent.com/IsaacLindo123/IsaHub-Roblox/main/player.lua"))()
+      Rayfield:Notify({Title = "Player YT", Content = "Carregando...", Duration = 3})
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-YouTube-Music-Player-72222"))()
       end,
-   })
+})
+
+TabSpecial:CreateButton({
+   Name = "Dex by Moon",
+   Callback = function()
+      Rayfield:Notify({Title = "Dex", Content = "Carregando...", Duration = 3})
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/MassiveHubs/loadstring/refs/heads/main/DexXenoAndRezware'))()
+      end,
+})
+
 -------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
