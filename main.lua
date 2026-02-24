@@ -125,7 +125,7 @@ TabSpecial:CreateButton({
    Name = "Tirar partes do chão",
    Callback = function()
       Rayfield:Notify({Title = "Furacão v2", Content = "Carregando...", Duration = 3})
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hm5650/PartController/refs/heads/main/PartController.lua")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hm5650/PartController/refs/heads/main/PartController.lua"))()
       end,
 })
 -------------------------------------------------------
