@@ -11,17 +11,14 @@ s.SkyboxFt = "http://www.roblox.com/asset/?id=137043939662365"
 s.SkyboxLf = "http://www.roblox.com/asset/?id=137043939662365"
 s.SkyboxRt = "http://www.roblox.com/asset/?id=137043939662365"
 s.SkyboxUp = "http://www.roblox.com/asset/?id=137043939662365"
-local Spooky = Instance.new("Sound", game.Workspace)
+s.Parent = game.Lighting
+Spooky = Instance.new("Sound", game.Workspace)
 Spooky.Name = "Spooky"
-Spooky.SoundId = "rbxassetid://133411773241503"
-Spooky.Volume = 3
+Spooky.SoundId = "rbxassetid://83959091660767"
+Spooky.Volume = 20
 Spooky.Looped = true
-Spooky.PlaybackSpeed = 0.5 
-local pitchEffect = Instance.new("PitchShiftSoundEffect")
-pitchEffect.Octave = 1.0 
-pitchEffect.Parent = Spooky
 Spooky:Play()
-local ID =133411773241503 --id here
+local ID =83959091660767 --id here
 function spamDecal(v)
 if v:IsA("Part") then
 for i=0, 5 do
