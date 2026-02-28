@@ -113,6 +113,30 @@ TabSpecial:CreateButton({
       end,
 })
 
+TabSpecial:CreateButton({
+   Name = "Bluudud skybox",
+   Callback = function()
+      Rayfield:Notify({Title = "Skybox2", Content = "Carregando...", Duration = 3})
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Isaaclindo123/IsaHub-Roblox/refs/heads/main/SkyboxScripts/bluu.lua"))()
+      end,
+})
+
+TabSpecial:CreateButton({
+   Name = "1x1x1x1 skybox",
+   Callback = function()
+      Rayfield:Notify({Title = "Skybox3", Content = "Carregando...", Duration = 3})
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Isaaclindo123/IsaHub-Roblox/refs/heads/main/SkyboxScripts/1x1.lua"))()
+      end,
+})
+
+TabSpecial:CreateButton({
+   Name = "Noli skybox",
+   Callback = function()
+      Rayfield:Notify({Title = "Skybox4", Content = "Carregando...", Duration = 3})
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Isaaclindo123/IsaHub-Roblox/refs/heads/main/SkyboxScripts/noli.lua"))()
+      end,
+})
+
 TabSpecial:CreateSection("--- Outros ---")
 
 TabSpecial:CreateButton({
