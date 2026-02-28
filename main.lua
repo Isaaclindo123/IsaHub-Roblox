@@ -70,25 +70,17 @@ TabSpecial:CreateButton({
 })
 
 TabSpecial:CreateButton({
-   Name = "Noli Script v1 (apenas o speed)",
+   Name = "Noli Script (apenas o speed)",
    Callback = function()
-      Rayfield:Notify({Title = "Noli v1", Content = "Ninguém encosta no meu objeto, se não leva instakill", Duration = 3})
+      Rayfield:Notify({Title = "Noli", Content = "Ninguém encosta no meu objeto, se não leva instakill", Duration = 3})
       loadstring(game:HttpGet('https://pastebin.com/raw/5iCjBWeR'))()
-   end,
-})
-
-TabSpecial:CreateButton({
-   Name = "Noli Script v2 (apenas o speed)",
-   Callback = function()
-      Rayfield:Notify({Title = "Noli v2", Content = "Eu tenho esse objeto estelar que eu reconheço como meu...", Duration = 3})
-      loadstring(game:HttpGet("https://pastebin.com/raw/xgWMQ72c"))()
    end,
 })
 
 TabSpecial:CreateButton({
    Name = "Dual Ultima",
    Callback = function()
-      Rayfield:Notify({Title = "Dual Ultima", Content = "Carregando...", Duration = 3})
+      Rayfield:Notify({Title = "DU v1", Content = "Carregando...", Duration = 3})
      loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Dual-Ultima-RB-Swords-use-an-reanimation-42992"))()
       end,
 })
@@ -96,7 +88,7 @@ TabSpecial:CreateButton({
 TabSpecial:CreateButton({
    Name = "Su Tart (Justiça pelos bacons)",
    Callback = function()
-      Rayfield:Notify({Title = "JUSITIÇA PELOS BACONS!!!", Content = "Carregando...", Duration = 3})
+      Rayfield:Notify({Title = "Bacon", Content = "Carregando...", Duration = 3})
      loadstring(game:HttpGet("https://raw.githubusercontent.com/ian49972/SCRIPTS/refs/heads/main/Sutart"))()
       end,
 })
