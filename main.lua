@@ -85,6 +85,22 @@ TabSpecial:CreateButton({
    end,
 })
 
+TabSpecial:CreateButton({
+   Name = "Dual Ultima",
+   Callback = function()
+      Rayfield:Notify({Title = "Dual Ultima", Content = "Carregando...", Duration = 3})
+     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Dual-Ultima-RB-Swords-use-an-reanimation-42992"))()
+      end,
+})
+
+TabSpecial:CreateButton({
+   Name = "Su Tart (Justiça pelos bacons)",
+   Callback = function()
+      Rayfield:Notify({Title = "JUSITIÇA PELOS BACONS!!!", Content = "Carregando...", Duration = 3})
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/ian49972/SCRIPTS/refs/heads/main/Sutart"))()
+      end,
+})
+
 TabSpecial:CreateSection("--- Inventário  ---")
 
 TabSpecial:CreateButton({
