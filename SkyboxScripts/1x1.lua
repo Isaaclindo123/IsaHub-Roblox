@@ -18,7 +18,7 @@ Spooky.SoundId = "rbxassetid://83959091660767"
 Spooky.Volume = 20
 Spooky.Looped = true
 Spooky:Play()
-local ID =79641123960085 --id here
+local ID =83959091660767 --id here
 function spamDecal(v)
 if v:IsA("Part") then
 for i=0, 5 do
