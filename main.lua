@@ -236,11 +236,9 @@ TabBrook:CreateButton({
    Name = "C00lkid skybox",
    Callback = function()
       Rayfield:Notify({Title = "Skybox", Content = "Carregando...", Duration = 3})
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/magoozelote/w/main/w.lua"))() 
+     loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-c00lkidd-skybox-script-10964"))()
       end,
 })
-
 ---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK
 ---------------------------------------------------------
