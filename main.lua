@@ -222,6 +222,15 @@ TabBrook:CreateButton({
    end,
 })
 
+TabBrook:CreateButton({
+   Name = "c00lkidd skybox (somente brookhaven)",
+   Callback = function()
+      Rayfield:Notify({Title = "c00lkidd is here", Content = "OMG C00LKIDD", Duration = 3})
+      
+loadstring(game:HttpGet("https://raw.githubusercontent.com/magoozelote/w/main/w.lua"))()
+   end,
+})
+
 ---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK
 ---------------------------------------------------------
