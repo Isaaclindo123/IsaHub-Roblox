@@ -236,7 +236,7 @@ TabBrook:CreateButton({
    Name = "C00lkid skybox",
    Callback = function()
       Rayfield:Notify({Title = "Skybox", Content = "Carregando...", Duration = 3})
-     loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-c00lkidd-skybox-script-10964"))()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Isaaclindo123/IsaHub-Roblox/main/c00l.lua"))()
       end,
 })
 ---------------------------------------------------------
