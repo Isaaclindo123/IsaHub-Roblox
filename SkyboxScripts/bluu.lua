@@ -5,12 +5,12 @@ wait(5.8)
 msg:Destroy()
 s = Instance.new("Sky")
 s.Name = "SKY"
-s.SkyboxBk = "http://www.roblox.com/asset/?id=83959091660767"
-s.SkyboxDn = "http://www.roblox.com/asset/?id=83959091660767"
-s.SkyboxFt = "http://www.roblox.com/asset/?id=83959091660767"
-s.SkyboxLf = "http://www.roblox.com/asset/?id=83959091660767"
-s.SkyboxRt = "http://www.roblox.com/asset/?id=83959091660767"
-s.SkyboxUp = "http://www.roblox.com/asset/?id=83959091660767"
+s.SkyboxBk = "http://www.roblox.com/asset/?id=93878584728602"
+s.SkyboxDn = "http://www.roblox.com/asset/?id=93878584728602"
+s.SkyboxFt = "http://www.roblox.com/asset/?id=93878584728602"
+s.SkyboxLf = "http://www.roblox.com/asset/?id=93878584728602"
+s.SkyboxRt = "http://www.roblox.com/asset/?id=93878584728602"
+s.SkyboxUp = "http://www.roblox.com/asset/?id=93878584728602"
 s.Parent = game.Lighting
 Spooky = Instance.new("Sound", game.Workspace)
 Spooky.Name = "Spooky"
