@@ -128,6 +128,16 @@ TabSpecial:CreateButton({
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hm5650/PartController/refs/heads/main/PartController.lua"))()
       end,
 })
+
+TabSpecial:CreateButton({
+   Name = "Console",
+   Callback = function()
+      Rayfield:Notify({Title = "Console", Content = "Carregando...", Duration = 3})
+    
+loadstring(game:HttpGet("https://pastefy.app/TAW7JCL8/raw"))()
+      end,
+})
+
 -------------------------------------------------------
 --- SEÇÃO: BROOKHAVEN (ZONA DE CHAOS)
 ---------------------------------------------------------
@@ -222,13 +232,13 @@ TabBrook:CreateButton({
    end,
 })
 
-TabBrook:CreateButton({
-   Name = "C00lkidd skybox",
+TabSpecial:CreateButton({
+   Name = "C00lkid skybox",
    Callback = function()
-      Rayfield:Notify({Title = "C00lkidd", Content = "aproveite a skybox", Duration = 3})
-      
-loadstring(game:HttpGet("https://raw.githubusercontent.com/magoozelote/w/main/w.lua"))()
-   end,
+      Rayfield:Notify({Title = "Skybox", Content = "Carregando...", Duration = 3})
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/magoozelote/w/main/w.lua"))() 
+      end,
 })
 
 ---------------------------------------------------------
