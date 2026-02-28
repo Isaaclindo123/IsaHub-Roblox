@@ -14,7 +14,7 @@ s.SkyboxUp = "http://www.roblox.com/asset/?id=131841158992674"
 s.Parent = game.Lighting
 Spooky = Instance.new("Sound", game.Workspace)
 Spooky.Name = "Spooky"
-Spooky.SoundId = "rbxassetid://79641123960085"
+Spooky.SoundId = "rbxassetid://83959091660767"
 Spooky.Volume = 20
 Spooky.Looped = true
 Spooky:Play()
