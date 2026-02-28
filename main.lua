@@ -232,7 +232,7 @@ TabBrook:CreateButton({
    end,
 })
 
-TabSpecial:CreateButton({
+TabBrook:CreateButton({
    Name = "C00lkid skybox",
    Callback = function()
       Rayfield:Notify({Title = "Skybox", Content = "Carregando...", Duration = 3})
