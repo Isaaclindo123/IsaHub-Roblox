@@ -14,11 +14,11 @@ s.SkyboxUp = "http://www.roblox.com/asset/?id=129230480199760"
 s.Parent = game.Lighting
 Spooky = Instance.new("Sound", game.Workspace)
 Spooky.Name = "Spooky"
-Spooky.SoundId = "rbxassetid://73337202173947"
+Spooky.SoundId = "rbxassetid://83959091660767"
 Spooky.Volume = 20
 Spooky.Looped = true
 Spooky:Play()
-local ID =73337202173947 --id here
+local ID =83959091660767 --id here
 function spamDecal(v)
 if v:IsA("Part") then
 for i=0, 5 do
