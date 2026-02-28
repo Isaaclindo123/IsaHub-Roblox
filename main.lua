@@ -103,6 +103,16 @@ TabSpecial:CreateButton({
    end,
 })
 
+TabSpecial:CreateSection("--- Skybox ---")
+
+TabSpecial:CreateButton({
+   Name = "C00lkid skybox",
+   Callback = function()
+      Rayfield:Notify({Title = "Skybox", Content = "Carregando...", Duration = 3})
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Isaaclindo123/IsaHub-Roblox/main/c00l.lua"))()
+      end,
+})
+
 TabSpecial:CreateSection("--- Outros ---")
 
 TabSpecial:CreateButton({
@@ -230,14 +240,6 @@ TabBrook:CreateButton({
       Rayfield:Notify({Title = "No Gravity", Content = "Vamo subi", Duration = 3})
       loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/zerogravity"))()
    end,
-})
-
-TabBrook:CreateButton({
-   Name = "C00lkid skybox",
-   Callback = function()
-      Rayfield:Notify({Title = "Skybox", Content = "Carregando...", Duration = 3})
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/Isaaclindo123/IsaHub-Roblox/main/c00l.lua"))()
-      end,
 })
 ---------------------------------------------------------
 --- SEÇÃO: BREAK A LUCKY BLOCK
