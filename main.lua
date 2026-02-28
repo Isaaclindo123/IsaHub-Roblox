@@ -223,9 +223,9 @@ TabBrook:CreateButton({
 })
 
 TabBrook:CreateButton({
-   Name = "c00lkidd skybox (somente brookhaven)",
+   Name = "C00lkidd skybox",
    Callback = function()
-      Rayfield:Notify({Title = "c00lkidd is here", Content = "OMG C00LKIDD", Duration = 3})
+      Rayfield:Notify({Title = "C00lkidd", Content = "aproveite a skybox", Duration = 3})
       
 loadstring(game:HttpGet("https://raw.githubusercontent.com/magoozelote/w/main/w.lua"))()
    end,
