@@ -18,8 +18,9 @@ Spooky.SoundId = "rbxassetid://133411773241503"
 Spooky.Volume = 20
 Spooky.Looped = true
 Spooky:Play()
+sound.PlaybackSpeed = 0.6 
 local pitchEffect = Instance.new("PitchShiftSoundEffect")
-pitchEffect.Octave = 1.5
+pitchEffect.Octave = 0.8 
 pitchEffect.Parent = Spooky
 local ID =133411773241503 --id here
 function spamDecal(v)
