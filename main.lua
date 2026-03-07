@@ -92,6 +92,13 @@ TabSpecial:CreateButton({
      loadstring(game:HttpGet("https://raw.githubusercontent.com/ian49972/SCRIPTS/refs/heads/main/Sutart"))()
       end,
 })
+TabSpecial:CreateButton({
+   Name = "Mafioso (pague sua divida)",
+   Callback = function()
+      Rayfield:Notify({Title = "Mafioso", Content = "Carregando...", Duration = 3})
+     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Mafioso-reanimate-FE-by-Mr-Eyes-86835"))()
+      end,
+})
 
 TabSpecial:CreateSection("--- Inventário  ---")
 
